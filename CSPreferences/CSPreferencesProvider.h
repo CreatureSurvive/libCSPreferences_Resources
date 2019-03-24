@@ -16,15 +16,15 @@
 @property (nonatomic, retain)   NSString        *plistPath;
 
 // initialization
-- (id)   initWithTweakID:(NSString *)identifier
-            defaultsPath:(NSString *)defaultsPath
-        postNotification:(NSString *)notification
-    notificationCallback:(void (^)(CSPreferencesProvider *))callback;
+- (id)initWithTweakID:(NSString *)identifier
+         defaultsPath:(NSString *)defaultsPath
+     postNotification:(NSString *)notification
+ notificationCallback:(void (^)(CSPreferencesProvider *))callback;
 
-- (id)   initWithTweakID:(NSString *)identifier
-                defaults:(NSDictionary *)defaultValues
-        postNotification:(NSString *)notification
-    notificationCallback:(void (^)(CSPreferencesProvider *))callback;
+- (id)initWithTweakID:(NSString *)identifier
+             defaults:(NSDictionary *)defaultValues
+     postNotification:(NSString *)notification
+ notificationCallback:(void (^)(CSPreferencesProvider *))callback;
 
 // Convenience
 // Fetching Values
@@ -35,6 +35,11 @@
 - (double)      doubleForKey:   (NSString *)key;
 - (int)         intForKey:      (NSString *)key;
 - (UIColor *)   colorForKey:    (NSString *)key;
+
+// Font Loading (Custom || System)
+- (UIFont *)fontForFamilyKey:   (NSString *)familyKey   sizeKey:(NSString *)sizeKey;
+- (UIFont *)fontForFamilyKey:   (NSString *)familyKey   size:(double)size;
+- (UIFont *)fontForFamilyName:  (NSString *)family      size:(double)size;
 
 // Setting Values
 - (void)setObject:              (id)obj         forKey:(NSString *)key;
